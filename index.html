@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎵 MusicMash - Algoritmo de Recomendación Musical</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="wrap">
+
+    <h1>🎵 MusicMash</h1>
+
+    <p class="sub">
+        Algoritmo de recomendación musical basado en comparación A/B y Ranking Elo
+    </p>
+
+</header>
+
+<main class="wrap grid">
+
+    <!-- Configuración -->
+
+    <section class="card">
+
+        <h2>1. Configuración</h2>
+
+        <label>Tipo de oyente</label>
+
+        <select id="segmentSelect"></select>
+
+        <label>Situación</label>
+
+        <select id="contextSelect"></select>
+
+        <div class="row">
+
+            <button id="btnNewPair" class="ghost">
+                🔄 Nuevo Duelo
+            </button>
+
+            <button id="btnReset" class="danger">
+                🗑 Reiniciar Ranking
+            </button>
+
+        </div>
+
+        <p class="hint">
+            Si aparece una comparación repetida puedes generar un nuevo duelo.
+        </p>
+
+    </section>
+
+    <!-- Comparación -->
+
+    <section class="card">
+
+        <h2>2. ¿Cuál prefieres?</h2>
+
+        <p id="question" class="question"></p>
+
+        <div class="duel">
+
+            <button id="btnA" class="pick">
+
+                <span class="tag">A</span>
+
+                <span id="labelA" class="title"></span>
+
+            </button>
+
+            <button id="btnB" class="pick">
+
+                <span class="tag">B</span>
+
+                <span id="labelB" class="title"></span>
+
+            </button>
+
+        </div>
+
+        <p class="hint">
+            Cada selección actualiza automáticamente el Ranking Elo.
+        </p>
+
+        <div class="row">
+
+            <button id="btnExport" class="ghost">
+                📥 Exportar CSV
+            </button>
+
+            <button id="btnShowTop" class="primary">
+                🏆 Ver Top 10
+            </button>
+
+        </div>
+
+    </section>
+
+    <!-- Ranking -->
+
+    <section class="card">
+
+        <h2>3. Ranking Musical</h2>
+
+        <div id="topBox" class="topbox"></div>
+
+        <p class="hint">
+            El ranking cambia según el tipo de oyente y la situación seleccionada.
+        </p>
+
+    </section>
+
+</main>
+
+<footer class="wrap foot">
+
+    <small>
+
+        MusicMash © 2026
+
+        <br><br>
+
+        Algoritmo de comparación A/B + Ranking Elo
+
+    </small>
+
+</footer>
+
+<script src="app.js"></script>
+
+</body>
+
+</html>
